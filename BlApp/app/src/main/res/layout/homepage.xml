@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="450dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/bottom"
+        tools:ignore="VisualLintBounds" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="70dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/hello"
+        android:textColor="@color/petrol"
+        android:textSize="48sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/activetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/welcome_home"
+        android:textColor="@color/petrol"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Switch
+        android:id="@+id/onoff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="45dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/automode"
+        android:layout_width="110dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="240dp"
+        android:background="@drawable/buttonmode"
+        android:fontFamily="sans-serif-black"
+        android:text="Auto\nMode"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/manualymode"
+        android:layout_width="110dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="260dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/buttonmode"
+        android:fontFamily="sans-serif-black"
+        android:text="Manualy\nMode"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/colortext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Color"
+        android:textColor="@color/petrol"
+        android:textSize="34sp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/automode" />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/colortext">
+
+        <Button
+            android:id="@+id/redled"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/buttoncolor"
+            android:backgroundTint="@color/red"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/blueled"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/buttoncolor"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+            android:backgroundTint="@color/blue" />
+
+        <Button
+            android:id="@+id/greenled"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/buttoncolor"
+            android:backgroundTint="@color/green"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/orangeled"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/buttoncolor"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+            android:backgroundTint="@color/orange" />
+
+        <Button
+            android:id="@+id/skyled"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/buttoncolor"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+            android:backgroundTint="@color/sky" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/infobutton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginBottom="40dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/info"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+        android:background="@drawable/buttoninfo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/dimmerbutton"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/buttonmode"
+        android:fontFamily="sans-serif-black"
+        android:text="dimmer"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/infobutton" />
+
+    <Button
+        android:id="@+id/schedulebutton"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/buttonmode"
+        android:fontFamily="sans-serif-black"
+        android:text="Schedule"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/infobutton" />
+
+    <Button
+        android:id="@+id/colorbutton"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/buttonmode"
+        android:fontFamily="sans-serif-black"
+        android:text="color"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/infobutton" />
+
+    <TextView
+        android:id="@+id/schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/schedule"
+        android:textColor="@color/petrol"
+        android:textSize="34dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/automode" />
+
+    <TextView
+        android:id="@+id/montofr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/mon_to_fri"
+        android:textColor="@color/petrol"
+        android:textSize="16dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/schedule" />
+
+    <TextView
+        android:id="@+id/atmtf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="at"
+        android:textColor="@color/petrol"
+        android:textSize="16dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/montofr"
+        app:layout_constraintTop_toBottomOf="@+id/schedule" />
+
+    <EditText
+        android:id="@+id/alarmmtf"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:inputType="time"
+        android:onClick="mostraTimePicker"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/montofr"
+        app:layout_constraintStart_toEndOf="@+id/atmtf"
+        app:layout_constraintTop_toBottomOf="@+id/schedule" />
+
+    <TextView
+        android:id="@+id/weekend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="80dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/weekend"
+        android:textColor="@color/petrol"
+        android:textSize="16dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/schedule" />
+
+    <TextView
+        android:id="@+id/atw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="80dp"
+        android:text="at"
+        android:textColor="@color/petrol"
+        android:textSize="16dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/montofr"
+        app:layout_constraintTop_toBottomOf="@+id/schedule" />
+
+    <EditText
+        android:id="@+id/alarmw"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:inputType="time"
+        android:onClick="mostraTimePicker"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/weekend"
+        app:layout_constraintStart_toEndOf="@+id/atmtf"
+        app:layout_constraintTop_toBottomOf="@+id/montofr" />
+
+    <TextView
+        android:id="@+id/dimmertext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="90dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/dimmer"
+        android:textSize="34dp"
+        android:textColor="@color/petrol"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/automode" />
+
+    <SeekBar
+        android:id="@+id/dimmerbar"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="150dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="465dp"
+        android:layout_marginEnd="45dp"
+        android:max="10"
+        android:min="0"
+        android:outlineAmbientShadowColor="@color/petrol"
+        android:outlineSpotShadowColor="@color/petrol"
+        android:progress="3"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/statustext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="status: none"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:textStyle="bold|italic"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/poweredby"
+        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintStart_toStartOf="@+id/poweredby"
+        app:layout_constraintTop_toBottomOf="@+id/lastoptext" />
+
+    <TextView
+        android:id="@+id/lastoptext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="last op: none"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:textStyle="bold|italic"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/poweredby"
+        app:layout_constraintEnd_toEndOf="@+id/poweredby"
+        app:layout_constraintStart_toStartOf="@+id/poweredby" />
+
+    <TextView
+        android:id="@+id/poweredby"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="90dp"
+        android:layout_marginBottom="35dp"
+        android:fontFamily="sans-serif-black"
+        android:text="powered by @gitandrehub"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageprofile"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="15dp"
+        android:clickable="true"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/icon" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

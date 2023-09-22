@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">BlApp</string>
+    <string name="system">System</string>
+    <string name="auto">Auto</string>
+    <string name="manualy">Manualy</string>
+    <string name="welcome_home">Welcome home</string>
+    <string name="hello">Hello</string>
+    <string name="schedule">Schedule</string>
+    <string name="mon_to_fri">Mon to Fri</string>
+    <string name="weekend">Weekend</string>
+    <string name="to">to</string>
+    <string name="from">from</string>
+    <string name="dimmer">Dimmer</string>
+    <string name="info">info</string>
+</resources>
