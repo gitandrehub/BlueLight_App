@@ -16,8 +16,8 @@ const int blue = 11;
 int dimmervalue = 0, redval = 0, greenval = 0, blueval = 0;
 
 // rtc and bh1750
-const int shutters = 90;
-const int day = 50;
+const int shutters = 10;
+const int day = 10;
 int hmtf = 0, mmtf = 0, hw = 0, mw = 0;
 bool autom = false;
 
@@ -50,6 +50,13 @@ void loop () {
 
   // commands sent by the app
   switch (data){
+    case 'B':
+      for(int i = 0;i<3;i++){
+        digitalWrite(blue, HIGH);
+        delay(50);
+        digitalWrite(blue, LOW);
+        delay(50);}
+      break;
     case 'F':
       changecolor("e", &redval, &greenval, &blueval);
       autom = false;
@@ -159,6 +166,7 @@ void automode(int hw, int mw, int hmtf, int mmtf, int redval, int greenval, int 
   int light = 0;
   int r, g, b;
   float lux = lightMeter.readLightLevel();
+  Serial.println(lux);
   
 
   if((now.hour() == hw && now.minute() == mw && (now.day() == 6 || now.day() == 7)) 
@@ -170,21 +178,19 @@ void automode(int hw, int mw, int hmtf, int mmtf, int redval, int greenval, int 
       analogWrite(blue, 3);
       lux = lightMeter.readLightLevel();
     }
-  } else if((now.month() > 9 || now.month() < 4) && now.hour() < 20){
-    Serial.println("giorno");
+  } else if((now.month() >= 9 || now.month() < 4) && now.hour() < 20){
+    Serial.print("giorno");
     light = day-lux;
     if(light > 0){
-      light = map(light, 0, day, 0, 10);
       Serial.println(light);
       if(redval == 0 && greenval == 0 && blueval == 0){
         redval = 252;
-        greenval = 146;
         blueval = 15;
-      } else{
-        r = map(light, 0, 10, 0, redval);
-        g = map(light, 0, 10, 0, greenval);
-        b = map(light, 0, 10, 0, blueval);
+        greenval = 146;
       }
+      r = map(light, 0, 10, 0, redval);
+      g = map(light, 0, 10, 0, greenval);
+      b = map(light, 0, 10, 0, blueval);    
       analogWrite(red, r);
       analogWrite(green, g);
       analogWrite(blue, b);
